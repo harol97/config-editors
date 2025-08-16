@@ -1,0 +1,57 @@
+{
+  "html.format.enable": false,
+  "python.analysis.diagnosticMode": "workspace",
+  "coc.preferences.jumpCommand": "split",
+  "python.analysis.autoSearchPaths": false,
+  "coc.preferences.formatOnSave": true,
+  "coc.preferences.formatOnType": true,
+  "eslint.autoFixOnSave": false,
+  "eslint.format.enable": false,
+  "javascript.format.enable": false,
+  "java.saveActions.organizeImports": false,
+  "pyright.organizeimports.provider": "pyright",
+  "java.enabled": false,
+  "typescript.format.enable": false,
+  "html.filetypes": [
+    "html",
+    "handlebars",
+    "htmldjango",
+    "blade",
+    "javascript"
+  ],
+  "pyright.enable": false,
+  "prettier.enable": false,
+  "prettier.disableLanguages": [
+    "python",
+    "react",
+    "json"
+  ],
+  "inlayHint.enable": false,
+  "tailwindCSS.enable": false,
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "className.*"
+  ],
+  "explorer.focus": true,
+  "explorer.position": "right",
+  "explorer.width": 80,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.quitOnOpen": true,
+  "explorer.file.showHiddenFiles": false,
+  "explorer.file.hiddenRules": {
+    "extensions": [
+      "o",
+      "a",
+      "obj",
+      "pyc"
+    ],
+    "filenames": [
+      "__pycache__"
+    ],
+    "patternMatches": [
+      "^\\."
+    ]
+  },
+}
