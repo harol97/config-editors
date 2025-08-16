@@ -1,0 +1,123 @@
+{
+    "editor.fontFamily": "\"UbuntuMono Nerd Font\"",
+    "editor.fontSize": 22, // 13.5
+    "terminal.integrated.fontSize": 22,//13.5
+    "workbench.sideBar.location": "right",
+    "editor.parameterHints.enabled": false,
+    "editor.inlayHints.enabled": "off",
+    "workbench.colorTheme": "One Dark Pro Night Flat",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindings": [
+        {
+            "before":["<leader>", "b"],
+            "commands":[
+                "workbench.view.explorer",
+            ]
+        },
+        {
+            "before":["<leader>", "h"],
+            "commands":[
+                "workbench.action.previousEditor",
+            ]
+        },
+        {
+            "before":["<leader>", "l"],
+            "commands":[
+                    "workbench.action.nextEditor",
+            ]
+        },
+        {
+            "before":["<leader>", "k"],
+            "commands":[
+                { "key": "ctrl+alt+up",  // El atajo que prefieras (puedes cambiarlo)
+                    "command": "workbench.action.navigateEditorGroups",
+                    "args": { "to": "up" },
+                    "when": "editorTextFocus"
+                }
+            ]
+        },
+        {
+            "before":["<leader>", "j"],
+            "commands":[
+                { "key": "ctrl+alt+up",  // El atajo que prefieras (puedes cambiarlo)
+                    "command": "workbench.action.navigateEditorGroups",
+                    "args": { "to": "down" },
+                    "when": "editorTextFocus"
+                }
+            ]
+        },
+        {
+            "before": ["g", "a"],
+            "commands": ["editor.action.sourceAction"]
+        }
+    ],
+    "vim.insertModeKeyBindings": [],
+    "vim.useCtrlKeys": true,
+    "vim.useSystemClipboard": true,
+    "editor.lineNumbers": "relative",
+    "redhat.telemetry.enabled": false,
+    "window.restoreWindows": "none",
+    "window.closeWhenEmpty": true,
+    "window.openFoldersInNewWindow": "on",
+    "editor.minimap.enabled": false,
+    "pgsql.serverGroups": [
+        {
+            "name": "Servers",
+            "id": "D52004A1-7ACE-4DA4-A1D7-8438B9505B1E",
+            "isDefault": true
+        }
+    ],
+    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoSearchPaths": false,
+    "python.analysis.diagnosticMode": "workspace",
+    "pgsql.connections": [
+        {
+            "id": "55BE35C1-E04B-4A3D-9655-6B94691F6BCB",
+            "groupId": "D52004A1-7ACE-4DA4-A1D7-8438B9505B1E",
+            "authenticationType": "SqlLogin",
+            "connectTimeout": 15,
+            "applicationName": "vscode-pgsql",
+            "clientEncoding": "utf8",
+            "sslmode": "prefer",
+            "server": "localhost",
+            "user": "lpproying",
+            "password": "",
+            "database": "lpproying",
+            "port": "5432",
+            "profileName": "lpproying (lpproying)",
+            "expiresOn": 0,
+            "profileSource": 0,
+            "displayName": "0.tcp.sa.ngrok.io, lpproying (lpproying)",
+            "emptyPasswordInput": true
+        },
+        {
+            "id": "41BC9FCF-FA2E-4F9A-A82E-05414772B563",
+            "groupId": "D52004A1-7ACE-4DA4-A1D7-8438B9505B1E",
+            "authenticationType": "SqlLogin",
+            "connectTimeout": 15,
+            "applicationName": "vscode-pgsql",
+            "clientEncoding": "utf8",
+            "sslmode": "prefer",
+            "server": "localhost",
+            "user": "postgres",
+            "password": "",
+            "profileName": "localhost, <default> (postgres)",
+            "port": "5433",
+            "expiresOn": 0
+        }
+    ],
+    "java.jdt.ls.java.home": "/home/ht/htfolder/tools/jdk-17.0.15+6",
+    "java.import.gradle.java.home": "/home/ht/htfolder/tools/jdk-17.0.15+6",
+    "files.autoSave": "afterDelay",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "java": true
+    },
+}

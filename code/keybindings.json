@@ -1,0 +1,31 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "space b",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarVisible && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "runCommands",
+        "when": "explorerViewletFocus && filesExplorerFocus && !inputFocus && !explorerResourceIsFolder",
+        "args": {
+            "commands": [
+                "list.select", // Opens the selected file and shifts focus
+                "workbench.action.closeSidebar" // Closes the sidebar
+            ]
+        }
+    },
+    {
+        "key": "ctrl+ñ",
+        "command": "terminal.toggleVisibility"
+    },
+    {
+        "key": "ctrl+[Semicolon]",
+        "command": "workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    }
+]
