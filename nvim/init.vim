@@ -1,5 +1,5 @@
 call plug#begin("~/.local/share/nvim/plugged")
-Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/tpope/vim-commentary' " comment lines
 Plug 'jremmen/vim-ripgrep'
 Plug 'rktjmp/lush.nvim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -7,7 +7,6 @@ Plug 'neoclide/coc.nvim',{'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/navarasu/onedark.nvim'
-Plug 'https://github.com/projekt0n/github-nvim-theme'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -15,15 +14,11 @@ Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
-Plug 'tpope/vim-fugitive'
-Plug 'josuegaleas/jay'
 Plug 'davidgranstrom/nvim-markdown-preview'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
-Plug 'udalov/kotlin-vim'
 Plug 'https://github.com/airblade/vim-gitgutter'
+Plug 'https://github.com/neovim/nvim-lspconfig'
 
 call plug#end()
 
@@ -136,17 +131,6 @@ nmap <space>h :TmuxNavigateLeft<cr>
 nmap <space>j :TmuxNavigateDown<cr>
 nmap <space>k :TmuxNavigateUp<cr>
 nmap <space>l :TmuxNavigateRight<cr>
-
-" colors to compatible with breezy theme in nvim
-hi CocErrorFloat guifg=#ffffff    " Error en rojo
-hi CocWarningFloat guifg=#ffffff  " Advertencia en amarillo
-hi CocInfoFloat guifg=#ffffff     " Información en azul
-hi CocHintFloat guifg=#ffffff     " Sugerencias en verde
-hi Delimiter guifg=#ffffff
-" hi MatchParen ctermfg=white ctermbg=blue guifg=#ffffff guibg=#0000ff
-" Puedes agregar colores específicos para corchetes y llaves
-
-hi NormalFloat   guibg=#313538 guifg=#e8e9eb  gui=NONE
 
 
 " coc-python (for python2)
