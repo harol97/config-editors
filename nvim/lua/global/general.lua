@@ -1,5 +1,5 @@
 vim.cmd("syntax on")
-vim.o.updatetime = 1000
+vim.o.updatetime = 200
 vim.opt.termguicolors = true
 vim.opt.encoding = "UTF-8"
 vim.opt.clipboard = "unnamedplus"

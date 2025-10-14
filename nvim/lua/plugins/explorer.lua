@@ -25,9 +25,18 @@ require("nvim-tree").setup({
     enable = true
   },
   view = {
-    width = 40,
+    width = 80,
     side = "right"
   },
+  filters = {
+    git_ignored = false
+  },
+  update_focused_file = {
+    enable = true,
+    update_root = {
+      enable = true
+    }
+  }
 })
 
 vim.keymap.set("n", "<space>b", "<Cmd>:NvimTreeToggle<CR>")

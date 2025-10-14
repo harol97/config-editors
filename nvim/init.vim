@@ -19,6 +19,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'nvim-tree/nvim-tree.lua'
 
+Plug 'https://github.com/neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-vsnip'
