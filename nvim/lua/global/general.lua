@@ -14,8 +14,4 @@ vim.cmd("filetype plugin on")
 vim.keymap.set('x', 'p', function()
   return 'pgv"' .. vim.v.register .. 'y`>'
 end, { expr = true })
-
-vim.keymap.set('x', 'P', function()
-  return 'Pgv"' .. vim.v.register .. 'y`>'
-end, { expr = true })
 -- now it is possible to paste many times over selected text
