@@ -7,6 +7,7 @@ require("ibl").setup()
 --vim.lsp.enable('ruff')
 require("global")
 require("plugins")
+require("lsp")
 
 vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
 

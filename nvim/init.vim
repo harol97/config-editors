@@ -19,13 +19,18 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'nvim-tree/nvim-tree.lua'
 
+"lsp
 Plug 'https://github.com/neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-
 Plug 'https://github.com/mfussenegger/nvim-jdtls'
+
+" code folding
+Plug 'kevinhwang91/promise-async'
+Plug 'kevinhwang91/nvim-ufo'
+
 
 call plug#end()
 
