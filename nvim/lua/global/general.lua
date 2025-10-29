@@ -9,6 +9,7 @@ vim.opt.relativenumber = true
 vim.opt.wrap = false
 vim.opt.showcmd = true
 vim.cmd("filetype plugin on")
+vim.keymap.set("n", "*", "*N") -- search word and keep current line
 
 -- now it is possible to paste many times over selected text
 vim.keymap.set('x', 'p', function()
