@@ -9,6 +9,6 @@ vim.g.onedark_config = {
   },
 }
 
-vim.cmd('colorscheme onedark')
+vim.cmd.colorscheme('onedark')
 
 vim.g.airline_theme = 'zenburn'
