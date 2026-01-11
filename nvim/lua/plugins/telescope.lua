@@ -1,5 +1,3 @@
-require("ibl").setup()
-
 require('telescope').load_extension('media_files')
 
 require("telescope").setup({
@@ -41,3 +39,7 @@ require("telescope").setup({
   },
 })
 
+vim.keymap.set("n", "ff", "<cmd>Telescope find_files<CR>")
+vim.keymap.set("n", "fg", "<cmd>Telescope live_grep<CR>")
+vim.keymap.set("n", "fb", "<cmd>Telescope buffers<CR>")
+vim.keymap.set("n", "fh", "<cmd>Telescope help_tags<CR>")
