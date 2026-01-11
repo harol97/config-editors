@@ -1,42 +1,31 @@
--- disable netrw at the very start of your init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
--- OR setup with some options
---
-local function my_on_attach(bufnr)
-  local api = require "nvim-tree.api"
-  local function opts(desc)
-    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-  end
-  api.config.mappings.default_on_attach(bufnr)
-  vim.keymap.set("n", "E",          api.node.open.vertical,             opts("Open: Vertical Split"))
-  vim.keymap.set("n", "s",          api.node.open.horizontal,             opts("Open: horizontal Split"))
-end
-
-require("nvim-tree").setup({
-  on_attach = my_on_attach,
-  actions = {
-    open_file = {
-      quit_on_open = true
+vim.keymap.set("n", "<space>b", "<Cmd>:Neotree<CR>")
+require("neo-tree").setup({
+  event_handlers = {
+    {
+      event = "file_open_requested",
+      handler = function()
+        require("neo-tree.command").execute({action = "close"})
+      end
     }
   },
-  diagnostics = {
-    enable = true
+  close_if_last_window = true,
+  window = {
+    position = "right",
+    width = 70,
+    mappings = {
+      ["S"] = "split_with_window_picker",
+      ["s"] = "vsplit_with_window_picker",
+    }
   },
-  view = {
-    width = 80,
-    side = "right"
-  },
-  filters = {
-    git_ignored = false
-  },
-  update_focused_file = {
-    enable = true,
-    update_root = {
-      enable = true
+  filesystem = {
+    follow_current_file = {
+      enabled = true,
+      leave_dirs_open = true
+    },
+    window_picker = {
+      enabled = true
     }
   }
 })
 
-vim.keymap.set("n", "<space>b", "<Cmd>:NvimTreeToggle<CR>")
+
