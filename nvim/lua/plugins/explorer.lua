@@ -15,6 +15,13 @@ require("neo-tree").setup({
     mappings = {
       ["S"] = "split_with_window_picker",
       ["s"] = "vsplit_with_window_picker",
+      ["Y"] = function(state)
+          local node = state.tree:get_node()
+          if node and node.name then
+            vim.fn.setreg('+', node.name)   -- copia solo el nombre al portapapeles
+            print("Nombre copiado: " .. node.name)
+          end
+        end,
     }
   },
   filesystem = {
