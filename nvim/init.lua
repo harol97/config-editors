@@ -14,10 +14,10 @@ require("lazy").setup({
   { "airblade/vim-gitgutter" },
 
   -- Telescope
-  { "nvim-lua/popup.nvim" },
-  { "nvim-lua/plenary.nvim" },
-  { "nvim-telescope/telescope.nvim" },
-  { "nvim-telescope/telescope-media-files.nvim" },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  },
 
   -- Git tools
   { "tpope/vim-fugitive" },
@@ -27,26 +27,14 @@ require("lazy").setup({
   { "davidgranstrom/nvim-markdown-preview" },
 
   -- explorer
+  
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    dependencies = {"MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim"}
-  },
-
-  {
-    "s1n7ax/nvim-window-picker", -- it's to choice window to split or vsplit
-    version = "2.*",
-    config = function()
-      require("window-picker").setup({
-        filter_rules = {
-          include_current_win = true,
-          autoselect_one = true,
-          bo = {
-            filetype = { "neo-tree", "neo-tree-popup", "notify" },
-            buftype = { "terminal", "quickfix" },
-          },
-        },
-      })
-    end,
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    }
   },
 
   -- LSP + completion
