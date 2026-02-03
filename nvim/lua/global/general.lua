@@ -5,6 +5,7 @@ vim.opt.encoding = "UTF-8"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
 vim.opt.showcmd = true
