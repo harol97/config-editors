@@ -2,7 +2,7 @@ vim.opt.background = "dark"
 vim.g.onedark_config = {
   style = 'darker',
   colors = {
-    bg0 = '#16191d',
+    bg0 = '#181818',
   },
   highlights = {
     Comment = { fg = "#7f848e"},
