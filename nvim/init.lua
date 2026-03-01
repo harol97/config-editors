@@ -43,7 +43,6 @@ require("lazy").setup({
   { "hrsh7th/cmp-nvim-lsp" },
   { "hrsh7th/cmp-vsnip" },
   { "hrsh7th/vim-vsnip" },
-  { "mfussenegger/nvim-jdtls" },
 
   -- Folding
   { "kevinhwang91/promise-async" },
