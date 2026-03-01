@@ -57,7 +57,6 @@ vim.diagnostic.config({
 
 require("ibl").setup()
 
---vim.lsp.enable('ruff')
 require("global")
 require("plugins")
 require("lsp")

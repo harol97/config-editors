@@ -34,3 +34,6 @@ require("nvim-tree").setup({
 })
 
 vim.keymap.set("n", "<space>b", "<Cmd>:NvimTreeToggle<CR>")
+vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "#181818" })
+vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = "#181818" })
+vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = "#181818" })

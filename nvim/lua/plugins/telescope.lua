@@ -1,5 +1,12 @@
+local actions = require('telescope.actions')
 require("telescope").setup {
   defaults = {
+    mappings = {
+      n = { -- Modo normal
+        ["s"] = actions.select_horizontal,
+        ["E"] = actions.select_vertical,
+      }
+    },
     initial_mode = "normal"
   },
   extensions = {
@@ -17,3 +24,21 @@ vim.keymap.set("n", "ff", "<cmd>Telescope find_files<CR>")
 vim.keymap.set("n", "fg", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "fb", "<cmd>Telescope buffers<CR>")
 vim.keymap.set("n", "fh", "<cmd>Telescope help_tags<CR>")
+
+-- Redefinir show_help
+actions.show_help = function(prompt_bufnr)
+  local mappings = {
+    n = { s = "split horizontal", E = "split vertical" },
+  }
+
+  local lines = { "=== Telescope Custom Help ===" }
+  for mode, map in pairs(mappings) do
+    table.insert(lines, "Mode: " .. mode)
+    for key, desc in pairs(map) do
+      table.insert(lines, string.format("  %s → %s", key, desc))
+    end
+  end
+
+  -- Mostrar en la ventana de Telescope
+  vim.api.nvim_buf_set_lines(prompt_bufnr, 0, -1, false, lines)
+end
