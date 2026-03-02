@@ -2,73 +2,53 @@ require("config.lazy")
 
 -- Plugins ---------------------------------------------------------------------
 require("lazy").setup({
-  -- UI
-  { "tpope/vim-commentary" },
-  { "rktjmp/lush.nvim" },
-  { "christoomey/vim-tmux-navigator" },
-  { "vim-airline/vim-airline" },
-  { "vim-airline/vim-airline-themes" },
-  { "navarasu/onedark.nvim" },
-  { "itchyny/lightline.vim" },
-  { "lukas-reineke/indent-blankline.nvim" },
-  { "airblade/vim-gitgutter" },
+  -- Theme
+  { "navarasu/onedark.nvim" },        -- dark theme
+  { "cormacrelf/vim-colors-github" }, -- light theme (GitHub style)
+
+  -- Essentials / Utilities
+  { "tpope/vim-commentary" },        -- comment lines easily with gc
+  { "rktjmp/lush.nvim" },            -- framework for creating color schemes
+  { "christoomey/vim-tmux-navigator" }, -- navigate between Vim and tmux seamlessly
+  { "vim-airline/vim-airline" },     -- lightweight status line
+  { "vim-airline/vim-airline-themes" }, -- themes for vim-airline
+  { "itchyny/lightline.vim" },       -- lightweight alternative to vim-airline
+  { "lukas-reineke/indent-blankline.nvim" }, -- show indentation guides
+  { "airblade/vim-gitgutter" },      -- shows git changes in the sign column
 
   -- Telescope
-  {
-    "nvim-telescope/telescope-file-browser.nvim",
+  { 
+    "nvim-telescope/telescope-file-browser.nvim", -- file browser for Telescope
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
 
-  -- Git tools
-  { "tpope/vim-fugitive" },
-  { "rbong/vim-flog" },
+  -- Git Tools
+  { "tpope/vim-fugitive" },          -- git commands inside Vim
+  { "rbong/vim-flog" },              -- visual git commit history
 
   -- Misc
-  { "davidgranstrom/nvim-markdown-preview" },
+  { "davidgranstrom/nvim-markdown-preview" }, -- live Markdown preview in browser
 
-  -- explorer
-  
+  -- Explorer
   {
-    "nvim-tree/nvim-tree.lua",
+    "nvim-tree/nvim-tree.lua",       -- tree-style file explorer
     version = "*",
     lazy = false,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    }
+    dependencies = { "nvim-tree/nvim-web-devicons" } -- icons for nvim-tree
   },
 
-  -- LSP + completion
-  { "neovim/nvim-lspconfig" },
-  { "hrsh7th/nvim-cmp" },
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/cmp-vsnip" },
-  { "hrsh7th/vim-vsnip" },
+  -- LSP + Completion
+  { "neovim/nvim-lspconfig" },       -- LSP configuration
+  { "hrsh7th/nvim-cmp" },            -- autocompletion
+  { "hrsh7th/cmp-nvim-lsp" },        -- LSP source for nvim-cmp
+  { "hrsh7th/cmp-vsnip" },           -- snippet source for nvim-cmp
+  { "hrsh7th/vim-vsnip" },           -- snippet engine
 
   -- Folding
-  { "kevinhwang91/promise-async" },
-  { "kevinhwang91/nvim-ufo" },
+  { "kevinhwang91/promise-async" },  -- dependency for nvim-ufo
+  { "kevinhwang91/nvim-ufo" },       -- smart code folding
 })
-
-
-vim.diagnostic.config({
-  virtual_lines = true
-})
-
-require("ibl").setup()
 
 require("global")
-require("plugins")
+require("features")
 require("lsp")
-
-vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
-
-local builtin = require('telescope.builtin')
-vim.keymap.set("n", "gd", function() 
-  -- vim.cmd("split")  -- abre un split horizontal
-  builtin.lsp_definitions({jump_type="split"})
-end, { noremap = true, silent = true })
-
-local local_config = vim.fn.getcwd() .. "/.vim/init.lua"
-if vim.fn.filereadable(local_config) == 1 then
-  dofile(local_config)
-end

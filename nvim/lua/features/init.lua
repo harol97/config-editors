@@ -1,0 +1,6 @@
+require("features.telescope")
+require("features.explorer")
+require("features.autocomplete")
+require("features.tmux")
+require("features.code-folding")
+require("features.blankline")
