@@ -4,7 +4,7 @@ require("onedark").setup({
   style = "darker",
   colors = {
     bg0 = "#181818",
-    fg = "#b9bcc0"
+    fg = "#dcdfe4"
   },
   highlights = {
     Comment = { fg = "#7f848e"},
