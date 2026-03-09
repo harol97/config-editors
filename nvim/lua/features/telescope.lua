@@ -1,4 +1,6 @@
 local actions = require('telescope.actions')
+local builtin = require('telescope.builtin')
+
 require("telescope").setup {
   defaults = {
     mappings = {
@@ -7,20 +9,34 @@ require("telescope").setup {
         ["E"] = actions.select_vertical,
       }
     },
-    initial_mode = "normal"
+    initial_mode = "normal",
+    -- Incluir archivos ocultos y respetar gitignore opcionalmente
+    file_ignore_patterns = {},   -- si quieres ignorar patrones, agrégalo aquí
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--hidden',       -- 🔹 esto incluye archivos ocultos
+      '--glob', '!.git/*'  -- opcional: ignora la carpeta .git
+    },
   },
   extensions = {
     file_browser = {
-      -- disables netrw and use telescope-file-browser in its place
+      hidden = true,      -- 🔹 archivos ocultos en file_browser
+      respect_gitignore = false, -- mostrar todos los archivos, incluso ignorados
     },
   },
 }
--- To get telescope-file-browser loaded and working with telescope,
--- you need to call load_extension, somewhere after setup function:
+
 require("telescope").load_extension "file_browser"
 
+-- Keymaps
 vim.keymap.set("n", "<space>f", "<cmd>Telescope file_browser<CR>")
-vim.keymap.set("n", "ff", "<cmd>Telescope find_files<CR>")
+vim.keymap.set("n", "ff", "<cmd>Telescope find_files hidden=true<CR>")
 vim.keymap.set("n", "fg", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "fb", "<cmd>Telescope buffers<CR>")
 vim.keymap.set("n", "fh", "<cmd>Telescope help_tags<CR>")
@@ -39,13 +55,10 @@ actions.show_help = function(prompt_bufnr)
     end
   end
 
-  -- Mostrar en la ventana de Telescope
   vim.api.nvim_buf_set_lines(prompt_bufnr, 0, -1, false, lines)
 end
 
-
-local builtin = require('telescope.builtin')
+-- LSP definitions
 vim.keymap.set("n", "gd", function() 
-  -- vim.cmd("split")  -- abre un split horizontal
   builtin.lsp_definitions({jump_type="split"})
 end, { noremap = true, silent = true })

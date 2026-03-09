@@ -1,5 +1,0 @@
-require("plugins.telescope")
-require("plugins.explorer")
-require("plugins.autocomplete")
-require("plugins.tmux")
-require("plugins.code-folding")
