@@ -3,7 +3,7 @@
     {
         "key": "space b",
         "command": "workbench.action.toggleSidebarVisibility",
-        "when": "sideBarVisible && !inputFocus"
+        "when": "sideBarVisible && !inputFocus && explorerViewletFocus && filesExplorerFocus"
     },
     {
         "key": "enter",

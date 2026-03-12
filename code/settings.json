@@ -1,7 +1,7 @@
 {
-    "editor.fontFamily": "\"UbuntuMono Nerd Font\"",
-    "editor.fontSize": 22, // 13.5
-    "terminal.integrated.fontSize": 22,//13.5
+    "editor.fontFamily": "\"Consolas Nerd Font\"",
+    "editor.fontSize": 13.5, // 13.5
+    "terminal.integrated.fontSize": 13.5,//13.5
     "workbench.sideBar.location": "right",
     "editor.parameterHints.enabled": false,
     "editor.inlayHints.enabled": "off",
@@ -52,11 +52,21 @@
         {
             "before": ["g", "a"],
             "commands": ["editor.action.sourceAction"]
+        },
+        {
+            "before":["<leader>", "a"],
+            "after": ["g", "g", "V", "G"]
         }
     ],
     "vim.insertModeKeyBindings": [],
     "vim.useCtrlKeys": true,
     "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["y"],
+            "after": ["\"", "+", "y"]
+        }
+    ],
     "editor.lineNumbers": "relative",
     "redhat.telemetry.enabled": false,
     "window.restoreWindows": "none",
@@ -119,5 +129,5 @@
         "markdown": false,
         "scminput": false,
         "java": true
-    },
+    }
 }
