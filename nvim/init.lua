@@ -47,6 +47,8 @@ require("lazy").setup({
   -- Folding
   { "kevinhwang91/promise-async" },  -- dependency for nvim-ufo
   { "kevinhwang91/nvim-ufo" },       -- smart code folding
+
+  {"github/copilot.vim"}
 })
 
 require("global")
