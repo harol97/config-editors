@@ -4,7 +4,7 @@ require("config.lazy")
 require("lazy").setup({
   -- Theme
   { "navarasu/onedark.nvim" },        -- dark theme
-  { "cormacrelf/vim-colors-github" }, -- light theme (GitHub style)
+  { "projekt0n/github-nvim-theme" }, -- light theme (GitHub style)
 
   -- Essentials / Utilities
   { "tpope/vim-commentary" },        -- comment lines easily with gc

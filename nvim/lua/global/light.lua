@@ -1,1 +1,1 @@
-vim.cmd.colorscheme("github")
+vim.cmd.colorscheme("github_light")
