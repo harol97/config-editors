@@ -36,7 +36,22 @@ require("telescope").load_extension "file_browser"
 
 -- Keymaps
 vim.keymap.set("n", "<space>f", "<cmd>Telescope file_browser<CR>")
-vim.keymap.set("n", "ff", "<cmd>Telescope find_files hidden=true<CR>")
+vim.keymap.set("n", "ff", function()
+  builtin.find_files({
+    hidden = true,
+    no_ignore = true,
+    no_ignore_parent = true,
+    file_ignore_patterns = {
+      "node_modules/",
+      "%.git/",
+      "dist/",
+      "build/",
+      ".next/",
+      ".nuxt/",
+      "coverage/",
+    },
+  })
+end)
 vim.keymap.set("n", "fg", "<cmd>Telescope live_grep<CR>")
 vim.keymap.set("n", "fb", "<cmd>Telescope buffers<CR>")
 vim.keymap.set("n", "fh", "<cmd>Telescope help_tags<CR>")
