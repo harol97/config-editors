@@ -5,14 +5,12 @@ require("lazy").setup({
   -- Theme
   { "navarasu/onedark.nvim" },        -- dark theme
   { "projekt0n/github-nvim-theme" }, -- light theme (GitHub style)
+  { "morhetz/gruvbox"},
 
   -- Essentials / Utilities
   { "tpope/vim-commentary" },        -- comment lines easily with gc
   { "rktjmp/lush.nvim" },            -- framework for creating color schemes
   { "christoomey/vim-tmux-navigator" }, -- navigate between Vim and tmux seamlessly
-  { "vim-airline/vim-airline" },     -- lightweight status line
-  { "vim-airline/vim-airline-themes" }, -- themes for vim-airline
-  { "itchyny/lightline.vim" },       -- lightweight alternative to vim-airline
   { "lukas-reineke/indent-blankline.nvim" }, -- show indentation guides
   { "airblade/vim-gitgutter" },      -- shows git changes in the sign column
 
