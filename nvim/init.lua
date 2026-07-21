@@ -6,6 +6,7 @@ require("lazy").setup({
   { "navarasu/onedark.nvim" },        -- dark theme
   { "projekt0n/github-nvim-theme" }, -- light theme (GitHub style)
   { "sainnhe/gruvbox-material"},
+  { "sainnhe/sonokai" },
 
   -- Essentials / Utilities
   { "tpope/vim-commentary" },        -- comment lines easily with gc

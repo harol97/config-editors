@@ -1,6 +1,7 @@
 vim.opt.background = "dark"
 
-local bg_color = "#181818"
+local bg_color = "#181818" -- alacritty
+bg_color = "#282828" -- gruvbox hard
 
 require("onedark").setup({
   style = "darker",
@@ -13,15 +14,10 @@ require("onedark").setup({
   },
 })
 
--- vim.cmd.colorscheme('onedark')
+vim.cmd.colorscheme('sonokai')
+vim.g.sonokai_style = "andromeda"
 
 
--- gruvbox dark theme
-vim.cmd.colorscheme("gruvbox-material")
-vim.g.gruvbox_material_background = "hard"
-bg_color = "#282828"
-
-
-vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = bg_color })
-vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = bg_color })
-vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = bg_color })
+-- vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = bg_color })
+-- vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = bg_color })
+-- vim.api.nvim_set_hl(0, "NvimTreeEndOfBuffer", { bg = bg_color })
