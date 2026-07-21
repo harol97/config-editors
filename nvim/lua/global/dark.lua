@@ -2,6 +2,7 @@ vim.opt.background = "dark"
 
 local bg_color = "#181818" -- alacritty
 bg_color = "#282828" -- gruvbox hard
+bg_color="#1E1F22" -- dark
 
 require("onedark").setup({
   style = "darker",
@@ -14,8 +15,7 @@ require("onedark").setup({
   },
 })
 
-vim.cmd.colorscheme('sonokai')
-vim.g.sonokai_style = "andromeda"
+vim.cmd.colorscheme('dark')
 
 
 -- vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = bg_color })
