@@ -4,6 +4,9 @@ vim.diagnostic.config({
 })
 vim.o.updatetime = 200
 vim.opt.termguicolors = true
+-- El cursor toma el color del grupo "Cursor" (lo define cada tema: light.lua / dark.lua)
+-- en vez del que elija la terminal.
+vim.opt.guicursor = "n-v-c-sm:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor,t:block-blinkon500-blinkoff500-TermCursor"
 vim.opt.encoding = "UTF-8"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.shiftwidth = 2

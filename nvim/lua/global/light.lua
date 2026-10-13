@@ -28,6 +28,9 @@ local function apply_light_overrides()
   -- Barra de las ventanas sin foco: por defecto github_light la pinta del mismo
   -- blanco que el fondo (hide_nc_statusline = true), así que no se ve nada.
   vim.api.nvim_set_hl(0, "StatusLineNC", { fg = fg })
+
+  -- Color del cursor (cámbialo aquí).
+  vim.api.nvim_set_hl(0, "Cursor", { fg = "#ffffff", bg = "#0969da" })
 end
 
 -- El colorscheme resetea todos los highlights al cargar, así que reaplicamos
