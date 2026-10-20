@@ -11,11 +11,16 @@ require("onedark").setup({
     fg = "#dcdfe4"
   },
   highlights = {
-    Comment = { fg = "#7f848e"},
+    Comment = { fg = "#838892"},
+    LineNr = { fg = "#c8cad0" },
+    LineNrAbove = { fg = "#c8cad0" },
+    LineNrBelow = { fg = "#c8cad0" },
+    CursorLineNr = { fg = "#c8cad0", bold = true },
   },
 })
 
 vim.cmd.colorscheme('dark')
+vim.cmd.colorscheme('onedark')
 
 -- Color del cursor (cámbialo aquí). El colorscheme resetea los highlights al
 -- cargar, así que se reaplica después de cada carga.

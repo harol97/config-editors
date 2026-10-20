@@ -12,12 +12,9 @@ capabilities.textDocument.foldingRange = {
     dynamicRegistration = false,
     lineFoldingOnly = true
 }
-local language_servers = vim.lsp.get_clients() -- or list servers manually like {'gopls', 'clangd'}
-for _, ls in ipairs(language_servers) do
-    require('lspconfig')[ls].setup({
-        capabilities = capabilities
-        -- you can add other fields for setting up lsp server in this table
-    })
-end
+-- API nuevo de Neovim 0.11+: aplica a todos los servers sin require('lspconfig')
+vim.lsp.config('*', {
+    capabilities = capabilities
+})
 require('ufo').setup()
 --
